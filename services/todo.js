@@ -44,9 +44,11 @@ exports.list = async ({ user_id, page = 1, limit = 15, sortField, sortOrder }) =
                         }
                     }
                 ],
-                total: {
-                    $count: "total"
-                }
+                total: [
+                    {
+                        $count: "total"
+                    }
+                ]
             }
         },
         {

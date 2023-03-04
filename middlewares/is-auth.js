@@ -5,12 +5,12 @@ const { throwError } = require("../utilities/responses");
 const { verifyToken } = require("../utilities/jwt");
 
 module.exports = catchAsync(async (req, res, next) => {
-    const token = req.headers["Authorization"];
+    const token = req.header('authorization');
     if (token) {
         let sessionId;
 
         try {
-            const data = verifyToken(token);
+            const data = verifyToken(token.replace("Bearer ", ""));
             sessionId = data.session;
         }
         catch (err) {
