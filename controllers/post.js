@@ -31,7 +31,7 @@ exports.create = catchAsync(async (req, res) => {
 exports.createComment = catchAsync(async (req, res) => {
     const { id } = req.params;
     const { comment } = req.body;
-    const { user } = req.auth.user;
+    const { user } = req.auth;
 
     const data = await postService.createComment({ user_id: user.id, post_id: id, body: comment });
     
@@ -41,7 +41,7 @@ exports.createComment = catchAsync(async (req, res) => {
 exports.editPost = catchAsync(async (req, res) => {
     const { id } = req.params;
     const { title, body } = req.body;
-    const { user } = req.auth.user;
+    const { user } = req.auth;
 
     const data = await postService.editPost({ user_id: user.id, post_id: id, body, title, user_type: user.type });
     
@@ -50,9 +50,9 @@ exports.editPost = catchAsync(async (req, res) => {
 
 exports.deletePost = catchAsync(async (req, res) => {
     const { id } = req.params;
-    const { user } = req.auth.user;
+    const { user } = req.auth;
 
-    const data = await postService.editPost({ user_id: user.id, post_id: id, user_type: user.type });
+    const data = await postService.deletePost({ user_id: user.id, post_id: id, user_type: user.type });
     
     return sendResponse(res, data);
 });

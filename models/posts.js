@@ -21,10 +21,4 @@ const schema = new mongoose.Schema({
     }
 });
 
-schema.pre('deleteOne', function (next) {
-    const post_id = this._id;
-
-    mongoose.model("Comment").deleteMany({ post_id: post_id }, next);
-});
-
 module.exports = mongoose.model("Post", schema, "posts");

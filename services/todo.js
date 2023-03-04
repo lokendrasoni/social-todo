@@ -91,7 +91,7 @@ exports.get = async (id) => {
 };
 
 exports.create = async ({ user_id, title, body }) => {
-    let todo = new Todo({
+    let todo = await new Todo({
         user_id,
         title,
         body

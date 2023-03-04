@@ -83,7 +83,7 @@ exports.get = async ({ id, page = 1, limit = 15, sortField, sortOrder }) => {
         post.user = toJson(post.user_id);
         delete post["user_id"];
 
-        const comments = getComments({ post_id: id, page, limit, sortField, sortOrder });
+        const comments = await getComments({ post_id: id, page, limit, sortField, sortOrder });
 
         post.comments = comments;
 
@@ -129,7 +129,8 @@ const getComments = async ({ post_id, page, limit, sortField, sortOrder }) => {
                     },
                     {
                         $unwind: {
-                            $path: "$user"
+                            path: "$user",
+                            preserveNullAndEmptyArrays: false
                         }
                     },
                     {
@@ -139,7 +140,6 @@ const getComments = async ({ post_id, page, limit, sortField, sortOrder }) => {
                             comment: 1,
                             user: {
                                 id: "$user._id",
-                                _id: 0,
                                 username: 1
                             },
                             created_at: 1,
@@ -179,7 +179,7 @@ const getComments = async ({ post_id, page, limit, sortField, sortOrder }) => {
 };
 
 exports.create = async ({ user_id, title, body }) => {
-    let post = new Post({
+    let post = await new Post({
         user_id,
         title,
         body
@@ -194,7 +194,7 @@ exports.createComment = async ({ user_id, post_id, body }) => {
     const post = await Post.findById(post_id);
 
     if (post) {
-        let comment = new Comment({
+        let comment = await new Comment({
             user_id,
             post_id,
             comment: body
@@ -242,6 +242,7 @@ exports.deletePost = async ({ post_id, user_id, user_type }) => {
     const post = await findPostAccess({ post_id, user_id, user_type });
 
     await Post.deleteOne({ _id: post._id });
+    await Comment.deleteMany({ post_id: post._id });
 
     return true;
 };
