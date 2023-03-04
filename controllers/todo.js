@@ -30,7 +30,7 @@ exports.create = catchAsync(async (req, res) => {
 exports.editTodo = catchAsync(async (req, res) => {
     const { id } = req.params;
     const { title, body, status } = req.body;
-    const { user } = req.auth.user;
+    const { user } = req.auth;
 
     const data = await todoService.editTodo({ user_id: user.id, todo_id: id, body, title, status, user_type: user.type });
     
@@ -39,9 +39,9 @@ exports.editTodo = catchAsync(async (req, res) => {
 
 exports.deleteTodo = catchAsync(async (req, res) => {
     const { id } = req.params;
-    const { user } = req.auth.user;
+    const { user } = req.auth;
 
-    const data = await todoService.editTodo({ user_id: user.id, todo_id: id, user_type: user.type });
+    const data = await todoService.deleteTodo({ user_id: user.id, todo_id: id, user_type: user.type });
     
     return sendResponse(res, data);
 });

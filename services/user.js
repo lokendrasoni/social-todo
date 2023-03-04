@@ -1,6 +1,7 @@
 const User = require("../models/users");
 const { throwError } = require("../utilities/responses");
 const toJson = require("../utilities/mongo-to-json");
+const generatePagination = require("../utilities/generate-pagination");
 
 exports.list = async ({ page = 1, limit = 15, sortField, sortOrder }) => {
     page = parseInt(page);
