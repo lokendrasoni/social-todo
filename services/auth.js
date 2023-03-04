@@ -24,7 +24,7 @@ exports.login = async (username, password) => {
     }
 };
 
-exports.register = async (username, password, type) => {
+exports.register = async (username, password) => {
     let user = await User.findOne({ username });
     if (user) {
         throw throwError("Username is already taken", "BAD_REQUEST", 400);
@@ -33,8 +33,7 @@ exports.register = async (username, password, type) => {
         const hash = await bcrypt.hash(password, saltRounds);
         let res = await (new User({
             password: hash,
-            username,
-            type
+            username
         })).save();
 
         res = toJson(res);
