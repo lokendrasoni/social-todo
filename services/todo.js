@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Todo = require("../models/todo");
+const Todo = require("../models/todos");
 const generatePagination = require("../utilities/generate-pagination");
 const toJson = require("../utilities/mongo-to-json");
 const { throwError } = require("../utilities/responses");

@@ -81,7 +81,7 @@ exports.get = async ({ id, page = 1, limit = 15, sortField, sortOrder }) => {
         post.user = toJson(post.user_id);
         delete post["user_id"];
 
-        const comments = getComments({ post_id: id, page, limit, sort, sortField, sortOrder });
+        const comments = getComments({ post_id: id, page, limit, sortField, sortOrder });
 
         post.comments = comments;
 
@@ -92,7 +92,7 @@ exports.get = async ({ id, page = 1, limit = 15, sortField, sortOrder }) => {
     }
 };
 
-const getComments = async ({ post_id, page, limit, sort, sortField, sortOrder }) => {
+const getComments = async ({ post_id, page, limit, sortField, sortOrder }) => {
     page = parseInt(page);
     limit = parseInt(limit);
     const skip = limit * (page - 1);
