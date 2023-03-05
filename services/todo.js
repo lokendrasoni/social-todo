@@ -5,7 +5,9 @@ const toJson = require("../utilities/mongo-to-json");
 const { throwError } = require("../utilities/responses");
 
 exports.list = async ({ user_id, page = 1, limit = 15, sortField, sortOrder }) => {
-    const { page, limit, skip, sort } = generatePagination.getPagination({ page, limit, sortField, sortOrder });
+    const { page: p, limit: l, skip, sort } = generatePagination.getPagination({ page, limit, sortField, sortOrder });
+    page = p;
+    limit = l;
 
     const query = [
         ...(user_id ? [

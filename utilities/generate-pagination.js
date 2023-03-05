@@ -4,7 +4,7 @@ module.exports = ({ page, limit, skip, total }) => {
     return { next_page, previous_page, total };
 };
 
-exports.getPagination = ({ page, limit, sortOrder, sortField }) => {
+module.exports.getPagination = ({ page, limit, sortOrder, sortField }) => {
     page = parseInt(page);
     limit = parseInt(limit);
     const skip = limit * (page - 1);
