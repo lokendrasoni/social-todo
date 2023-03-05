@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const fs = require("fs");
+const path = require("path");
+
 module.exports = async function (globalConfig, projectConfig) {
     await new Promise((resolve, reject) => {
         mongoose.connect(
@@ -18,4 +21,9 @@ module.exports = async function (globalConfig, projectConfig) {
             reject(err)
         });
     });
+    
+    //register model schema
+    for (let file of fs.readdirSync(path.resolve(__dirname, "../models"))) {
+        if (file.indexOf('_') !== 0 && file.indexOf('README.md') !== 0) require('../models/' + file);
+    }
 };
