@@ -1,8 +1,9 @@
 module.exports = {
-    projects: [
-        '<rootDir>/tests/jest.config.js',
-    ],
-    globalSetup: './jest.setup.js',
-    globalTeardown: './jest.teardown.js',
-    coverageReporters: ['json-summary', 'text', 'lcov', 'clover', 'html'],
+    testEnvironment: 'node',
+    testEnvironmentOptions: {
+      NODE_ENV: 'test',
+    },
+    setupFiles: ["./jest.setup.js"],
+    restoreMocks: true,
+    coveragePathIgnorePatterns: ['node_modules', './tests/db.js']
 };
