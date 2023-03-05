@@ -1,0 +1,24 @@
+[
+    {
+        "_id": {
+            "$oid": "6403461aef91f143923e477f"
+        },
+        "user_id": {
+            "$oid": "64033c5fd64598e2522ddd7d"
+        },
+        "title": "Test todo",
+        "body": "A test todo",
+        "status": "pending",
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677936154947"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677936154947"
+            }
+        },
+        "__v": 0
+    }
+]

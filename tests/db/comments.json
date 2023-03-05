@@ -1,0 +1,25 @@
+[
+    {
+        "_id": {
+            "$oid": "64042810515b26a75b0a21e2"
+        },
+        "user_id": {
+            "$oid": "64033c5fd64598e2522ddd7d"
+        },
+        "post_id": {
+            "$oid": "64034614ef91f143923e477b"
+        },
+        "comment": "This is a comment",
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677994000553"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677994000553"
+            }
+        },
+        "__v": 0
+    }
+]

@@ -1,0 +1,40 @@
+[
+    {
+        "_id": {
+            "$oid": "64033c5fd64598e2522ddd7d"
+        },
+        "username": "user",
+        "password": "$2a$10$iYx5deG.IrzKMnfqbhgUyeeNg9rl2PNZhNM/7wDYWNJDyNa1V2706",
+        "type": "user",
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677933663337"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677933663337"
+            }
+        },
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "64033c5fd64598e2522ddd7e"
+        },
+        "username": "admin",
+        "password": "$2a$10$iYx5deG.IrzKMnfqbhgUyeeNg9rl2PNZhNM/7wDYWNJDyNa1V2706",
+        "type": "admin",
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677933663337"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677933663337"
+            }
+        },
+        "__v": 0
+    }
+]

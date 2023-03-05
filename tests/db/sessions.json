@@ -1,0 +1,46 @@
+[
+    {
+        "_id": {
+            "$oid": "64033c5fd64598e2522ddd80"
+        },
+        "user_id": {
+            "$oid": "64033c5fd64598e2522ddd7d"
+        },
+        "ip": "::1",
+        "user_agent": "PostmanRuntime/7.31.1",
+        "expired": false,
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677933663346"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677933770916"
+            }
+        },
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "64033c5fd64598e2522ddd81"
+        },
+        "user_id": {
+            "$oid": "64033c5fd64598e2522ddd7d"
+        },
+        "ip": "::1",
+        "user_agent": "PostmanRuntime/7.31.1",
+        "expired": true,
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677933663346"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677933770916"
+            }
+        },
+        "__v": 0
+    }
+]
