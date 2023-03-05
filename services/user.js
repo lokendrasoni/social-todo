@@ -8,7 +8,7 @@ exports.list = async ({ page = 1, limit = 15, sortField, sortOrder }) => {
     limit = parseInt(limit);
     const skip = limit * (page - 1);
     sortOrder = sortOrder ? (sortOrder === "asc" ? 1 : -1) : -1;
-    const sort = { [sortField]: sortOrder };
+    const sort = { [sortField || "created_at"]: sortOrder };
 
     const query = [
         {
