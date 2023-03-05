@@ -15,16 +15,16 @@ module.exports.connect = async () => {
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
-            },
-            err => {
-                if (err) {
-                    console.log(err);
-                    reject(err);
-                }
-                console.log('Connected to mongo');
-                resolve('Connected to mongo');
-            },
+            }
         );
+        const mongoCon = mongoose.connection;
+        mongoCon.on("open", () => {
+            console.log("Connected to MongoDB");
+            resolve("Connected to mongo")
+        });
+        mongoCon.on("error", (err) => {
+            reject(err)
+        });
     });
     return replSet;
 };

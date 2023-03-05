@@ -6,7 +6,6 @@ module.exports = {
     },
     setupFiles: ["./jest.setup.js"],
     restoreMocks: true,
-    coveragePathIgnorePatterns: ['node_modules', 'apis'],
-    testPathIgnorePatterns: ["apis"]
+    coveragePathIgnorePatterns: ['node_modules']
   };
   

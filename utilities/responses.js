@@ -6,6 +6,7 @@ exports.throwError = (message, type, errno) => {
     return error;
 };
 
+/* istanbul ignore next */
 exports.sendResponse = (res, data, additional_data = {}) => {
     return res.status(200).json({
         success: true,

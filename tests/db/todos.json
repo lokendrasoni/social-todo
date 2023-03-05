@@ -20,5 +20,27 @@
             }
         },
         "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "6403461aef91f143923e477e"
+        },
+        "user_id": {
+            "$oid": "64033c5fd64598e2522ddd7d"
+        },
+        "title": "Test todo 1",
+        "body": "A test todo 1",
+        "status": "pending",
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677936154947"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677936154947"
+            }
+        },
+        "__v": 0
     }
 ]
