@@ -40,5 +40,26 @@
             }
         },
         "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "64034614ef91f143923e477d"
+        },
+        "user_id": {
+            "$oid": "64033c5fd64598e2522ddd7d"
+        },
+        "title": "Test post 1",
+        "body": "A test post 1",
+        "created_at": {
+            "$date": {
+                "$numberLong": "1677936148120"
+            }
+        },
+        "updated_at": {
+            "$date": {
+                "$numberLong": "1677936148120"
+            }
+        },
+        "__v": 0
     }
 ]

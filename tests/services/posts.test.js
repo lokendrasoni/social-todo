@@ -8,6 +8,16 @@ describe("Posts Service", () => {
 
             expect(data.data).toBeDefined();
         });
+        it("Post list - Pagination", async () => {
+            const data = await postService.list({ user_id, page: 1, limit: 1, sortField: "created_at", sortOrder: "desc" });
+
+            expect(data.data).toBeDefined();
+        });
+        it("Post list - Pagination - page-2", async () => {
+            const data = await postService.list({ user_id, page: 2, limit: 1, sortField: "created_at", sortOrder: "desc" });
+
+            expect(data.data).toBeDefined();
+        });
         it("Post list - Ascending Sort", async () => {
             const data = await postService.list({ user_id, page: 1, limit: 10, sortField: "created_at", sortOrder: "asc" });
 
